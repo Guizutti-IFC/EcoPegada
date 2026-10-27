@@ -13,5 +13,6 @@ export function calcularPegada(respostas) {
 export function classificarPegada(total) {
   if (total <= 100) return { nivel: 'Baixa', cor: '#2e7d32', mensagem: 'Excelente! Sua pegada está abaixo da média.' }
   if (total <= 250) return { nivel: 'Média', cor: '#f9a825', mensagem: 'Bom caminho! Há espaço para melhorar.' }
-  return { nivel: 'Alta', cor: '#c62828', mensagem: 'Atenção! Sua pegada está acima do ideal.' }
+  if (total < 400) return { nivel: 'Alta', cor: '#c62828', mensagem: 'Atenção! Sua pegada está acima do ideal.' }
+  return { nivel: 'Muito Alta', cor: '#770c0c', mensagem: 'Cuidado! Sua pegada é significativamente alta.' }
 }
